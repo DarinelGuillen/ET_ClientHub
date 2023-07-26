@@ -1,14 +1,13 @@
-
+import Table from "../components/organism/Table";
+import Nav from "../components/organism/Nav";
 
 function Home() {
- 
-	
+
+
   return (
     <>
-     <h1>HOLAAAAA</h1>
-     <h1>HOLAAAAA</h1>
-     <h1>HOLAAAAA</h1>
-     <h1>HOLAAAAA</h1>
+      <Nav />
+      <Table />
     </>
   );
 }
