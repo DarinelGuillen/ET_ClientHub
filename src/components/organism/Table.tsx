@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import BodyTable from "../molecules/BodyTable";
 import MoreInfo from "../molecules/MoreInfo";
 import UserContext from "../../contexts/UserContext";
@@ -25,7 +25,7 @@ function Table() {
       .catch((error) => {
         console.error("Error fetching user data:", error);
       });
-  }, []);
+  }, [currenUser]);
 
   const handleCheckboxChange = (e, params) => {
     if (e.target.checked) {

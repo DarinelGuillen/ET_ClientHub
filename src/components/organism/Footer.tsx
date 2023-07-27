@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Modify from "../molecules/Modify";
 import Delete from "../molecules/Delete";
-import NewUser from "../molecules/NewUser";
+import NewUser from "../atoms/NewUser";
 import CurrenUserContext from "../../contexts/CurrenUserContext";
 import "../../assets/style/Footer.css";
 
@@ -11,7 +11,6 @@ function Footer() {
   const handleNewUserClick = (e: any) => {
     e.preventDefault();
     const newUser = {
-      id: "",
       name: "",
       last_name: "",
       mother_last_name: "",
@@ -30,7 +29,6 @@ function Footer() {
       trips: "",
       books: "",
     };
-    console.log(`🤨😶🤐|| 🥓 file: Footer.tsx:33 🥓 handleNewUserClick 🥓 newUser||`, newUser)
     setCurrenUser(newUser);
   };
 
@@ -65,7 +63,7 @@ function Footer() {
                 className="btn btn-primary"
                 data-toggle="modal"
                 data-target="#ModalNewUser"
-                onClick={handleNewUserClick} // Add the click handler here
+                onClick={handleNewUserClick}  
               >
                 New User
               </button>
