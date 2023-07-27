@@ -11,7 +11,6 @@ function Footer() {
   const handleNewUserClick = (e:any) => {
     e.preventDefault();
     setCurrenUser([]);
-    console.log(`🤨😶🤐|| 🥓 file: Footer.tsx:15 🥓 handleNewUserClick 🥓 setCurrenUser||`)
   };
 
   return (

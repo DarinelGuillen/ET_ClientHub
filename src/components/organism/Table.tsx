@@ -33,7 +33,6 @@ function Table() {
         } else {
             setCurrenUser([]);
         }
-         console.log(`🤨😶🤐|| 🥓 file: Table.tsx:32 🥓 handleCheckboxChange 🥓 params||`, params)
   };
 
   return (

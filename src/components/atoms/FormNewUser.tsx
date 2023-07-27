@@ -81,7 +81,7 @@ function FormNewUser() {
             },
         };
 
-        console.log(formDataObj);
+        (formDataObj);
     };
     return (
         <>
