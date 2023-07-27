@@ -14,7 +14,13 @@ function NewUser() {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <div className="modal-body">
                 <FormNewUser />
+            </div>
+            <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" className="btn btn-success" >Guardar</button>
+            </div>
           </div>
         </div>
       </div>

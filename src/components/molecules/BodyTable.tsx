@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import UserCurrenIdContext from "../../contexts/UserCurrenIdContext";
+import CurrenUserContext from "../../contexts/CurrenUserContext";
 import UserContext from "../../contexts/UserContext";
 function BodyTable({ params, handleCheckboxChange }) {
-  const { currenUser, setCurrenUser } = useContext(UserCurrenIdContext);
+  const { currenUser, setCurrenUser } = useContext(CurrenUserContext);
   const { usersData, setUsersData } = useContext(UserContext);
 
   if (!params) {
@@ -13,15 +13,15 @@ function BodyTable({ params, handleCheckboxChange }) {
 
   const handleMoreInfoClick = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
     e.preventDefault();
-  
-     
-    const currentUser = usersData.find((user:any) => user.id === id);
-  
+
+
+    const currentUser = usersData.find((user: any) => user.id === id);
+
     if (currentUser) {
       setCurrenUser(currentUser);
     }
   };
-  
+
 
   return (
     <>

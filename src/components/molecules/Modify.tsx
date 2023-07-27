@@ -1,9 +1,9 @@
-import  { useContext } from 'react';
-import FormUser from '../atoms/FormUser';
-import UserCurrenIdContext from '../../contexts/UserCurrenIdContext';
+import { useContext } from 'react';
+// import FormUser from '../atoms/FormUser';
+import CurrenUserContext from '../../contexts/CurrenUserContext';
 
 function Modify() {
-  const { currenUser } = useContext(UserCurrenIdContext);
+  const { currenUser } = useContext(CurrenUserContext);
 
   return (
     <>
@@ -17,7 +17,7 @@ function Modify() {
               </button>
             </div>
             <div className="modal-body">
-                <FormUser params={currenUser} />
+              {/* <FormUser params={currenUser} /> */}
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancelar</button>

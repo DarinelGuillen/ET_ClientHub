@@ -1,16 +1,37 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import Modify from "../molecules/Modify";
 import Delete from "../molecules/Delete";
 import NewUser from "../molecules/NewUser";
-import UserCurrenIdContext from "../../contexts/UserCurrenIdContext";
+import CurrenUserContext from "../../contexts/CurrenUserContext";
 import "../../assets/style/Footer.css";
 
 function Footer() {
-  const { setCurrenUser } = useContext(UserCurrenIdContext);
+  const { setCurrenUser } = useContext(CurrenUserContext);
 
-  const handleNewUserClick = (e:any) => {
+  const handleNewUserClick = (e: any) => {
     e.preventDefault();
-    setCurrenUser([]);
+    const newUser = {
+      id: "",
+      name: "",
+      last_name: "",
+      mother_last_name: "",
+      gender: "",
+      age: "",
+      street: "",
+      interior_number: "",
+      exterior_number: "",
+      neighborhood: "",
+      municipality: "",
+      state: "",
+      hobby: "",
+      destinations: "",
+      roomtype: "",
+      income: "",
+      trips: "",
+      books: "",
+    };
+    console.log(`🤨😶🤐|| 🥓 file: Footer.tsx:33 🥓 handleNewUserClick 🥓 newUser||`, newUser)
+    setCurrenUser(newUser);
   };
 
   return (

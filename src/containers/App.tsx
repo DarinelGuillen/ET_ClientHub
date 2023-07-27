@@ -1,22 +1,22 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import React, { useState } from "react";
+import { useState } from "react";
 import Home from '../pages/Home'
 import UserContext from "../contexts/UserContext";
-import UserCurrenIdContext from '../contexts/UserCurrenIdContext';
+import CurrenUserContext from '../contexts/CurrenUserContext';
 function App() {
-  const [usersData, setUsersData] = useState([]);
-  const [currenUser, setCurrenUser] = useState([]);
+  const [usersData, setUsersData] = useState<any>([]);
+  const [currenUser, setCurrenUser] = useState<any>([]);
 
 
 
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ usersData, setUsersData }}>
-        <UserCurrenIdContext.Provider value={{ currenUser, setCurrenUser }}>
+        < CurrenUserContext.Provider value={{ currenUser, setCurrenUser }}>
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
-        </UserCurrenIdContext.Provider>
+        </ CurrenUserContext.Provider>
       </UserContext.Provider>
     </BrowserRouter>
   );

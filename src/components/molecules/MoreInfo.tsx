@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import UserCurrenIdContext from "../../contexts/UserCurrenIdContext";
+import CurrenUserContext from "../../contexts/CurrenUserContext";
 
 function MoreInfo() {
-  const { currenUser } = useContext(UserCurrenIdContext);
+  const { currenUser } = useContext(CurrenUserContext);
 
   if (!currenUser) {
     return null;

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import UserCurrenIdContext from "../../contexts/UserCurrenIdContext";
+import CurrenUserContext from "../../contexts/CurrenUserContext";
 
 function Delete() {
   // Access the current user context
-  const { currenUser } = useContext(UserCurrenIdContext);
+  const { currenUser } = useContext(CurrenUserContext);
 
   return (
     <>

@@ -2,12 +2,12 @@ import React, { useEffect, useContext } from "react";
 import BodyTable from "../molecules/BodyTable";
 import MoreInfo from "../molecules/MoreInfo";
 import UserContext from "../../contexts/UserContext";
-import UserCurrenIdContext from "../../contexts/UserCurrenIdContext";
+import CurrenUserContext from "../../contexts/CurrenUserContext";
 import "../../assets/style/Table.css";
 
 function Table() {
   const { usersData, setUsersData } = useContext(UserContext);
-  const { currenUser, setCurrenUser } = useContext(UserCurrenIdContext);
+  const { currenUser, setCurrenUser } = useContext(CurrenUserContext);
 
   useEffect(() => {
     const url = "http://localhost:3000/users";
@@ -28,11 +28,12 @@ function Table() {
   }, []);
 
   const handleCheckboxChange = (e, params) => {
-      if (e.target.checked) {
-          setCurrenUser(params);
-        } else {
-            setCurrenUser([]);
-        }
+    if (e.target.checked) {
+      setCurrenUser(params);
+      console.log(`🤨😶🤐|| 🥓 file: Table.tsx:33 🥓 handleCheckboxChange 🥓 params||`, params)
+    } else {
+      setCurrenUser([]);
+    }
   };
 
   return (
@@ -56,7 +57,7 @@ function Table() {
             </thead>
             <tbody>
               {usersData.length > 0 ? (
-                usersData.map((params:any) => (
+                usersData.map((params: any) => (
                   <BodyTable key={params.id} params={params} handleCheckboxChange={handleCheckboxChange} />
                 ))
               ) : (
