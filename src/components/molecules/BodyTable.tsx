@@ -1,240 +1,57 @@
+import React, { useContext } from "react";
+import UserCurrenIdContext from "../../contexts/UserCurrenIdContext";
+import UserContext from "../../contexts/UserContext";
+function BodyTable({ params, handleCheckboxChange }) {
+  const { currenUser, setCurrenUser } = useContext(UserCurrenIdContext);
+  const { usersData, setUsersData } = useContext(UserContext);
 
-function BodyTable() {
+  if (!params) {
+    return null;
+  }
 
+  const { id, name, last_name, mother_last_name, age, gender } = params;
 
-    return (
-        <>
-        
-            <tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
+  const handleMoreInfoClick = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
+    e.preventDefault();
+  
+    // Find the user in the usersData context whose id matches the id received as a parameter
+    const currentUser = usersData.find((user:any) => user.id === id);
+  
+    if (currentUser) {
+      setCurrenUser(currentUser);
+    }
+  };
+  
 
-                </td>
-                
-            </tr>
-            {/*  */}
-            <tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr><tr>
-                <th scope="row">1</th>
-                <td>Cristian DARINEl</td>
-                <td>ESCOBAR</td>
-                <td>Guillen</td>
-                <td>19</td>
-                <td>Masculino</td>
-                <td>
-                    <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#ModalMoreInfo">
-                    Más Info
-                    </button>
-
-                </td>
-                
-            </tr>
-            {/*  */}
-            
-        </>
-    );
+  return (
+    <>
+      <tr key={id}>
+        <th scope="row">
+          <input
+            type="checkbox"
+            checked={params === currenUser}
+            onChange={(e) => handleCheckboxChange(e, params)}
+          />
+        </th>
+        <td>{name}</td>
+        <td>{last_name}</td>
+        <td>{mother_last_name}</td>
+        <td>{age}</td>
+        <td>{gender}</td>
+        <td>
+          <button
+            type="button"
+            className="btn btn-secondary"
+            data-toggle="modal"
+            data-target="#ModalMoreInfo"
+            onClick={(e) => handleMoreInfoClick(e, id)}
+          >
+            Más Info
+          </button>
+        </td>
+      </tr>
+    </>
+  );
 }
+
 export default BodyTable;

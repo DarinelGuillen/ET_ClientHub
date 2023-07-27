@@ -1,35 +1,77 @@
+import React, { useEffect, useContext } from "react";
 import BodyTable from "../molecules/BodyTable";
 import MoreInfo from "../molecules/MoreInfo";
-import'../../assets/style/Table.css'
+import UserContext from "../../contexts/UserContext";
+import UserCurrenIdContext from "../../contexts/UserCurrenIdContext";
+import "../../assets/style/Table.css";
+
 function Table() {
+  const { usersData, setUsersData } = useContext(UserContext);
+  const { currenUser, setCurrenUser } = useContext(UserCurrenIdContext);
 
+  useEffect(() => {
+    const url = "http://localhost:3000/users";
 
-    return (
-        <>
-        {/* Modal */}
-        <MoreInfo/>
-        {/*  */}
-        <div className="Container">
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setUsersData(data.data.user);
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the fetch
+        console.error("Error fetching user data:", error);
+      });
+  }, []);
+
+  const handleCheckboxChange = (e, params) => {
+      if (e.target.checked) {
+          setCurrenUser(params);
+        } else {
+            setCurrenUser([]);
+        }
+         console.log(`🤨😶🤐|| 🥓 file: Table.tsx:32 🥓 handleCheckboxChange 🥓 params||`, params)
+  };
+
+  return (
+    <>
+      {/* Modal */}
+      <MoreInfo />
+      {/*  */}
+      <div className="Container">
         <div className="table-responsive">
-            <table className="table table-striped table-dark table-bordered ">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido Paterno</th>
-                        <th scope="col">Apellido Materno</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">Sexo</th>
-                        <th scope="col">Informacion Completa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <BodyTable/>
-                </tbody>
-            </table>
-            </div>
-            </div>
-        </>
-    );
+          <table className="table table-striped table-dark table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Select</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido Paterno</th>
+                <th scope="col">Apellido Materno</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Informacion Completa</th>
+              </tr>
+            </thead>
+            <tbody>
+              {usersData.length > 0 ? (
+                usersData.map((params:any) => (
+                  <BodyTable key={params.id} params={params} handleCheckboxChange={handleCheckboxChange} />
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={7}>Loading...</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
+  );
 }
+
 export default Table;
