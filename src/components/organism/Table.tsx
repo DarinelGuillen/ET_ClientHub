@@ -27,7 +27,7 @@ function Table() {
       });
   }, [currenUser]);
 
-  const handleCheckboxChange = (e, params) => {
+  const handleCheckboxChange = (e:any, params:any) => {
     if (e.target.checked) {
       setCurrenUser(params);
       console.log(`🤨😶🤐|| 🥓 file: Table.tsx:33 🥓 handleCheckboxChange 🥓 params||`, params)

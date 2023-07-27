@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import CurrenUserContext from "../../contexts/CurrenUserContext";
 import UserContext from "../../contexts/UserContext";
+
 function BodyTable({ params, handleCheckboxChange }) {
   const { currenUser, setCurrenUser } = useContext(CurrenUserContext);
-  const { usersData, setUsersData } = useContext(UserContext);
+  const { usersData } = useContext(UserContext);
 
   if (!params) {
     return null;
@@ -13,15 +14,11 @@ function BodyTable({ params, handleCheckboxChange }) {
 
   const handleMoreInfoClick = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
     e.preventDefault();
-
-
     const currentUser = usersData.find((user: any) => user.id === id);
-
     if (currentUser) {
       setCurrenUser(currentUser);
     }
   };
-
 
   return (
     <>
@@ -29,7 +26,7 @@ function BodyTable({ params, handleCheckboxChange }) {
         <th scope="row">
           <input
             type="checkbox"
-            checked={params === currenUser}
+            checked={currenUser?.id === id}
             onChange={(e) => handleCheckboxChange(e, params)}
           />
         </th>

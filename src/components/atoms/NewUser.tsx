@@ -12,7 +12,6 @@ function NewUser() {
     console.log(`NEWUSER🤨😶🤐|| 🥓 file: usersForm.tsx:20 🥓 useEffect 🥓 currenUser||`, currenUser)
   }, [currenUser])
 
-  // Function to handle the "Guardar" button click
   const handleGuardarClick = (e:any) => {
     e.preventDefault();
     console.log(`🤨😶🤐|| 🥓 file: NewUser.tsx:19 🥓 handleGuardarClick 🥓 currenUser||`, currenUser)
@@ -27,7 +26,7 @@ function NewUser() {
     fetch(url,options)
       .then(response => response.json())
       .then(data => {
-        console.log("Response data:", data);
+        alert(data.status)
         setCurrenUser([]);
       })
       .catch(error => {
