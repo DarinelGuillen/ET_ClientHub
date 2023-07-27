@@ -14,7 +14,7 @@ function BodyTable({ params, handleCheckboxChange }) {
   const handleMoreInfoClick = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
     e.preventDefault();
   
-    // Find the user in the usersData context whose id matches the id received as a parameter
+     
     const currentUser = usersData.find((user:any) => user.id === id);
   
     if (currentUser) {

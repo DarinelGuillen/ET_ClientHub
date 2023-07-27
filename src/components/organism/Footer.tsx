@@ -8,7 +8,6 @@ import "../../assets/style/Footer.css";
 function Footer() {
   const { setCurrenUser } = useContext(UserCurrenIdContext);
 
-  // Handler for the "New User" button click
   const handleNewUserClick = (e:any) => {
     e.preventDefault();
     setCurrenUser([]);

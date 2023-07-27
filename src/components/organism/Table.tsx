@@ -23,7 +23,6 @@ function Table() {
         setUsersData(data.data.user);
       })
       .catch((error) => {
-        // Handle any errors that occurred during the fetch
         console.error("Error fetching user data:", error);
       });
   }, []);

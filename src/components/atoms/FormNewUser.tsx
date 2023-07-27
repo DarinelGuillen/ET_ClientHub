@@ -45,7 +45,6 @@ function FormNewUser() {
         const bookCientific = formData.has('bookCientific') ? formData.get('bookCientific') : '';
 
 
-        // Crear el objeto JSON con los datos del formulario
         const formDataObj = {
             firstName,
             lastName,
