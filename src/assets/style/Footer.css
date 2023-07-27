@@ -1,0 +1,10 @@
+.custom-footer {
+    height: 10vh;
+    width: 100vw;
+    bottom: 0;
+    background-color: #9E9E9E;
+}
+
+.custom-footer .btn {
+    margin-right: 10px;
+}

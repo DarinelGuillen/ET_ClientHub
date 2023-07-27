@@ -1,3 +1,5 @@
+import FormUser from "../atoms/FormUser";
+
 function NewUser() {
     return ( 
         <>
@@ -12,14 +14,7 @@ function NewUser() {
                 </button>
               </div>
               <div className="modal-body">
-                ¿Estás seguro de que deseas borrar este usuario? Esta acción es irreversible y se eliminarán todos los datos relacionados con el usuario.
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+                <FormUser/>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancelar</button>

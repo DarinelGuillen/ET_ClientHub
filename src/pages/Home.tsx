@@ -1,5 +1,6 @@
-import Table from "../components/organism/Table";
 import Nav from "../components/organism/Nav";
+import Table from "../components/organism/Table";
+import Footer from "../components/organism/Footer";
 
 function Home() {
 
@@ -8,6 +9,7 @@ function Home() {
     <>
       <Nav />
       <Table />
+      <Footer/>
     </>
   );
 }

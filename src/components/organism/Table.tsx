@@ -1,10 +1,14 @@
 import BodyTable from "../molecules/BodyTable";
+import MoreInfo from "../molecules/MoreInfo";
 import'../../assets/style/Table.css'
 function Table() {
 
 
     return (
         <>
+        {/* Modal */}
+        <MoreInfo/>
+        {/*  */}
         <div className="Container">
         <div className="table-responsive">
             <table className="table table-striped table-dark table-bordered ">
